@@ -37,7 +37,7 @@ function loadNext(){
     if(pageNumber == 2){
         document.getElementById("load_prev").disabled = false;
     }
-    PageNumberH3.innerHTML = pageNumber;
+    PageNumberH3.innerHTML = `page number ${pageNumber}` 
     fetchData(pageNumber);
     forloop(data)
 }
@@ -52,7 +52,7 @@ function loadPrev(){
     else{
         document.getElementById("load_prev").disabled = false;
     }
-    PageNumberH3.innerHTML = pageNumber;
+    PageNumberH3.innerHTML = `page number ${pageNumber}`;
     fetchData(pageNumber);
     forloop(data)
 }
