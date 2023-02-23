@@ -34,9 +34,9 @@ function forloop(data){
 
 function loadNext(){
     pageNumber++;
-    if(pageNumber == 2){
-        document.getElementById("load_prev").disabled = false;
-    }
+    // if(pageNumber == 2){
+    //     document.getElementById("load_prev").disabled = false;
+    // }
     PageNumberH3.innerHTML = `page number ${pageNumber}` 
     fetchData(pageNumber);
     // forloop(data)
@@ -45,17 +45,14 @@ function loadNext(){
 
 
 function loadPrev(){
-    pageNumber--;
-    if(pageNumber<=0){
-        pageNumber=0;
-    }
     // if(pageNumber == 1){
     //     document.getElementById("load_prev").disabled = true;        
     // }
     // else{
     //     document.getElementById("load_prev").disabled = false;
     // }
-    if(pageNumber>=1){
+    if(pageNumber>1){
+    pageNumber--;
     PageNumberH3.innerHTML = `page number ${pageNumber}`;
     fetchData(pageNumber);
     }
