@@ -1,4 +1,4 @@
-// //your code here
+//your code here
 
 let PageNumberH3 = document.getElementById("PageNumber");
 let orderList = document.getElementById("orderList");
@@ -11,11 +11,6 @@ function fetchData(pageNumber){
     .then((response) => response.json())
     .then((_data) =>{
         console.log(_data);
-        // for(let i = 0; i< 5; i++){
-        //     //const element = data[i];
-        //     console.log(data[i].title);
-        //     orderList.innerHTML += `<li>${data[i].title}</li>`
-        // }
         forloop(_data)
 
     })    
@@ -26,35 +21,22 @@ fetchData(pageNumber);
 function forloop(data){
     orderList.innerHTML = " "
     for(let i = 0; i< 5; i++){
-        //const element = data[i];
         // console.log(data[i].title);
-        orderList.innerHTML += `<li>${data[i].title}</li>`
+        orderList.innerHTML += `<li>${data[i].id}</li>`
     }
 }
 
 function loadNext(){
     pageNumber++;
-    // if(pageNumber == 2){
-    //     document.getElementById("load_prev").disabled = false;
-    // }
     PageNumberH3.innerHTML = `page number ${pageNumber}` 
     fetchData(pageNumber);
-    // forloop(data)
 }
 
-
-
 function loadPrev(){
-    // if(pageNumber == 1){
-    //     document.getElementById("load_prev").disabled = true;        
-    // }
-    // else{
-    //     document.getElementById("load_prev").disabled = false;
-    // }
     if(pageNumber>1){
     pageNumber--;
     PageNumberH3.innerHTML = `page number ${pageNumber}`;
     fetchData(pageNumber);
     }
-    // forloop(data)
 }
+    
